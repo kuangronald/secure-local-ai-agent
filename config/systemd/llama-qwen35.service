@@ -1,0 +1,12 @@
+[Unit]
+Description=llama.cpp server - Qwen3.6 35B-A3B
+After=network-online.target
+
+[Service]
+# %h = the user's home directory
+ExecStart=%h/ai/llama.cpp/build/bin/llama-server -m %h/ai/models/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf -ngl 99 --n-cpu-moe 26 -c 131072 -fa on --cache-type-k q8_0 --cache-type-v q8_0 --jinja --chat-template-kwargs '{"enable_thinking":false}' --alias qwen3.6-35b --slot-save-path %h/ai/slots --host 127.0.0.1 --port 8081
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

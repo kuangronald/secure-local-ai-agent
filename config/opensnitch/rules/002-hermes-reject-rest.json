@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-02T14:00:00.000000000-04:00",
+  "updated": "2026-10-02T14:45:00.000000000-04:00",
+  "name": "002-hermes-reject-rest",
+  "enabled": true,
+  "precedence": false,
+  "action": "reject",
+  "duration": "always",
+  "operator": {
+    "type": "regexp",
+    "operand": "process.path",
+    "sensitive": false,
+    "data": "^/home/USERNAME/[.]hermes/tools/python-.*/bin/python"
+  }
+}

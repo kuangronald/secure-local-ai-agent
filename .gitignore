@@ -1,0 +1,13 @@
+# Never commit secrets, personal data or model files
+.env
+*.env
+*.gguf
+*.bin
+slots/
+ObsidianVault/
+Memory/
+Knowledge/
+Daily/
+*.log
+*.tmp
+.DS_Store
